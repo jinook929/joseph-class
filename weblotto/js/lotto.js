@@ -28,38 +28,38 @@ function makeLottoNum() {
   const arr = [];
 
   while (true) {
-    // //숫자를 생성 1 - 45 사이의 숫자
-    // const num = parseInt(Math.random() * 45) + 1;
+    // // 숫자를 생성 1 - 45 사이의 숫자
+    const num = parseInt(Math.random() * 45) + 1;
 
-    // //검사
-    // const index = arr.indexOf(num);
+    // 검사
+    const index = arr.indexOf(num);
 
-    // console.log(`Num : ${num}   INDEX: ${index}`);
+    console.log(`Num : ${num}   INDEX: ${index}`);
 
-    // if (index >= 0) {
-    //   continue;
+    if (index >= 0) {
+      continue;
+    }
+
+    const newLength = arr.push(num);
+
+    if (newLength === 6) {
+      break;
+    }
+
+    // // 숫자를 생성 1 - 45 사이의 숫자
+    // const num = Math.floor(Math.random() * (45 - 1 + 1) + 1)
+    // // 이미 나온 숫자인지 검사
+    // console.log(`Number Collection : [${arr}] // Current Number : ${num}`)
+    // if (arr.includes(num)) {
+    //   console.log(`${num} is already in the collection.`)
+    //   continue
     // }
-
-    // const newLength = arr.push(num);
-
+    // // 새로운 숫자인 경우, 로또 번호로 추가
+    // const newLength = arr.push(num)
+    // // 6개 숫자가 모였는지 확인
     // if (newLength === 6) {
-    //   break;
+    //   break
     // }
-
-    // 숫자를 생성 1 - 45 사이의 숫자
-    const currentNum = Math.floor(Math.random() * (45 - 1 + 1) + 1)
-    // 이미 나온 숫자인지 검사
-    console.log(`Number Collection : [${arr}] // Current Number : ${currentNum}`)
-    if (arr.includes(currentNum)) {
-      console.log(`${currentNum} is already in the collection.`)
-      continue
-    }
-    // 새로운 숫자인 경우, 로또 번호로 추가
-    const arrLength = arr.push(currentNum)
-    // 6개 숫자가 모였는지 확인
-    if (arrLength === 6) {
-      break
-    }
   }
   return arr;
 }
